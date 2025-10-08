@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- If you use WebView / network libraries -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Firebase Cloud Messaging permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    
+    <!-- Permissions for Agora voice/video calls -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- For Android 13+ (API 33+), READ_MEDIA_IMAGES is required for MediaStore access -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    
+    <!-- Camera feature for video calls -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SMDA1">
+        <activity
+            android:name=".followingyou"
+            android:exported="false" />
+        <!-- Non-launcher screens: exported=false (good), add singleTop for stability -->
+        <activity
+            android:name=".viewstory"
+            android:exported="false" />
+        <activity
+            android:name=".story"
+            android:exported="false" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
+            android:name=".instaprof"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".highlight"
+            android:exported="false" />
+        <activity
+            android:name=".editprofile"
+            android:exported="false" />
+        <activity
+            android:name=".gallery"
+            android:exported="false" />
+        <activity
+            android:name=".camera"
+            android:exported="false" />
+        <activity
+            android:name=".addingstory"
+            android:exported="false" />
+        <activity
+            android:name=".following"
+            android:exported="false" />
+        <activity
+            android:name=".calling"
+            android:exported="false" />
+        <activity
+            android:name=".IncomingCallActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <service
+            android:name=".CallService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+        
+        <!-- Screenshot Detection Service -->
+        <service
+            android:name=".ScreenshotDetectionService"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <!-- Firebase Cloud Messaging Service -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".chat"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ChatListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jacob_wSearch"
+            android:exported="false" />
+        <activity
+            android:name=".internshala"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".feedpage"
+            android:exported="false" />
+        <activity
+            android:name=".feed"
+            android:exported="false" />
+
+        <activity
+            android:name=".cred"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".register"
+            android:exported="false" /> <!-- Only launcher needs exported=true -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tabsRow" type="id" />
+    <item name="dividerTop" type="id" />
+    <item name="imgAvatar" type="id" />
+</resources>

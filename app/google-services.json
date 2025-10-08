@@ -1,0 +1,30 @@
+{
+    "project_info": {
+      "project_number": "560639790999",
+      "firebase_url": "https://smda2-31b7e-default-rtdb.firebaseio.com",
+      "project_id": "smda2-31b7e",
+      "storage_bucket": "smda2-31b7e.firebasestorage.app"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:560639790999:android:3cddcac993b427122f3ed2",
+          "android_client_info": {
+            "package_name": "com.example.smd_a1"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyA0Kpt-7_llrXmx4e3w9yZvRECJviWu8Wk"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
