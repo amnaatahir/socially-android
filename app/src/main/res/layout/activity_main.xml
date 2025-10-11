@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@android:color/white"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!-- Socially Logo -->
+    <TextView
+        android:id="@+id/tvSocially"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:background="@drawable/socially_logo"
+        android:textColor="@color/brick"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <!-- From SMD text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="from"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:id="@+id/tvSmd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMD"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/brick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Bottom indicator line -->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:background="@color/brick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
