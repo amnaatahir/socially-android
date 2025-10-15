@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- ===== Top: search row ===== -->
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/search1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/searchBox"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_search_box"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:text="Search"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnSearch"
+        app:layout_constraintEnd_toStartOf="@id/btnCode"
+        app:layout_constraintStart_toEndOf="@id/btnSearch"
+        app:layout_constraintTop_toTopOf="@id/btnSearch" />
+
+    <ImageButton
+        android:id="@+id/btnCode"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/barcode_icon_191664"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnSearch"
+        app:layout_constraintBottom_toBottomOf="@id/btnSearch" />
+
+    <!-- ===== Quick filter chips ===== -->
+    <LinearLayout
+        android:id="@+id/chipsRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/searchBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_chip"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Shop"
+            android:textColor="@color/brick"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_chip"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Style"
+            android:textColor="@color/brick"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_chip"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Sports"
+            android:textColor="@color/brick"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_chip"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Auto"
+            android:textColor="@color/brick"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_chip"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Music"
+            android:textColor="@color/brick"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <!-- ===== Grid guidelines (3 equal columns) ===== -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3333" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6666" />
+
+    <!-- ===== Top section: left small + right big (2x2) ===== -->
+    <ImageView
+        android:id="@+id/tileL1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/g33"
+        app:layout_constraintTop_toBottomOf="@id/chipsRow"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tileBig"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v1"
+        app:layout_constraintStart_toStartOf="@id/g33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipsRow"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tileL2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/g33"
+        app:layout_constraintTop_toBottomOf="@id/tileL1"
+        app:layout_constraintBottom_toBottomOf="@id/tileBig"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <!-- ===== Next row (3 small tiles) ===== -->
+    <ImageView
+        android:id="@+id/tile2_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/g33"
+        app:layout_constraintTop_toBottomOf="@id/tileBig"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tile2_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v3"
+        app:layout_constraintStart_toStartOf="@id/g33"
+        app:layout_constraintEnd_toStartOf="@id/g66"
+        app:layout_constraintTop_toTopOf="@id/tile2_1"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tile2_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v2"
+        app:layout_constraintStart_toStartOf="@id/g66"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tile2_1"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <!-- ===== Third row (3 small tiles, above bottom nav) ===== -->
+    <ImageView
+        android:id="@+id/tile3_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/g33"
+        app:layout_constraintTop_toBottomOf="@id/tile2_1"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tile3_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v3"
+        app:layout_constraintStart_toStartOf="@id/g33"
+        app:layout_constraintEnd_toStartOf="@id/g66"
+        app:layout_constraintTop_toTopOf="@id/tile3_1"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ImageView
+        android:id="@+id/tile3_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/v2"
+        app:layout_constraintStart_toStartOf="@id/g66"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tile3_1"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <!-- 🔹 Bottom navigation -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/t1"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/brick"/>
+
+        <ImageButton
+            android:id="@+id/navSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/t2"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/brick"/>
+
+        <ImageButton
+            android:id="@+id/navAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/t3"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/brick"/>
+
+        <ImageButton
+            android:id="@+id/navHeart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/t4"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/brick" />
+
+        <ImageButton
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/t5"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/brick"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
