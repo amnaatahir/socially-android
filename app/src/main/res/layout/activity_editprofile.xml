@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".editprofile">
+
+    <!-- ===== Top bar: Cancel | Edit Profile | Done ===== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/cancel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/editprofile1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/done1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ===== Scrollable content ===== -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Use a ConstraintLayout inside the ScrollView so we can align rows -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Guideline to align values (about 32% across) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.32" />
+
+            <!-- Avatar -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/storyProfilePic1"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_pic"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/changeprofile1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Profile Photo"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/storyProfilePic1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Divider -->
+            <View
+                android:id="@+id/divider_top"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/changeprofile1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <!-- ===== Name row ===== -->
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_top"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/value_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Jacob West"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:padding="0dp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_name"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_name"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_name"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- ===== Username row ===== -->
+            <TextView
+                android:id="@+id/label_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_name"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/value_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="jacob_w"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:padding="0dp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_username"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_username"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_username"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- ===== Website row ===== -->
+            <TextView
+                android:id="@+id/label_website"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_username"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/value_website"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:textColor="@color/light_grey"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_website"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_website"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_website"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- ===== Bio row (multi-line) ===== -->
+            <TextView
+                android:id="@+id/label_bio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bio"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_website"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/value_bio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Digital goodies designer @pixsellz. Everything is designed."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:padding="0dp"
+                android:minLines="1"
+                android:maxLines="3"
+                android:gravity="top|start"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toTopOf="@id/label_bio"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_bio"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_bio"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Switch to Professional Account -->
+            <TextView
+                android:id="@+id/change1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Switch to Professional Account"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/div_bio"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Section header -->
+            <TextView
+                android:id="@+id/header_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private Information"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/change1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <!-- ===== Email row ===== -->
+            <TextView
+                android:id="@+id/label_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_private"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/value_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_email"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_email"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_email"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- ===== Phone row ===== -->
+            <TextView
+                android:id="@+id/label_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_email"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/value_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+1 202 555 0147"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:inputType="phone"
+                android:padding="0dp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_phone"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_phone"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_phone"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <!-- ===== Gender row ===== -->
+            <TextView
+                android:id="@+id/label_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_phone"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/value_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:padding="0dp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_gender"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/div_gender"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/value_gender"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
