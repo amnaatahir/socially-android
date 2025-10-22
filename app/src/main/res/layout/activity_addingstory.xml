@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".addingstory">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivPreview"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/story"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:shapeAppearanceOverlay="@style/OvalBottomShape" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/circlebg"
+    android:padding="8dp"
+    android:src="@drawable/close"
+    app:tint="@color/white"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/partnership"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/partnership"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack"/>
+
+    <ImageButton
+        android:id="@+id/text"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/text"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/partnership"
+        app:layout_constraintStart_toEndOf="@id/partnership"/>
+
+    <ImageButton
+        android:id="@+id/stickers"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/stickers"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/text"
+        app:layout_constraintStart_toEndOf="@id/text"/>
+
+    <ImageButton
+        android:id="@+id/music"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/music"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/stickers"
+        app:layout_constraintStart_toEndOf="@id/stickers"/>
+
+    <ImageButton
+        android:id="@+id/filters"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/filters"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/music"
+        app:layout_constraintStart_toEndOf="@id/music"/>
+
+    <ImageButton
+        android:id="@+id/options"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circlebg"
+        android:padding="8dp"
+        android:src="@drawable/options"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/filters"
+        app:layout_constraintStart_toEndOf="@id/filters"/>
+
+    <View
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnPickImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/material_dynamic_neutral20"
+    android:text="Your Stories"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.063"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.978"/>
+
+    <Button
+        android:id="@+id/btnPickVideo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:backgroundTint="@color/material_dynamic_neutral20"
+    android:drawableLeft="@drawable/star__round_"
+    android:drawablePadding="8dp"
+    android:padding="10dp"
+    android:text="Close Friends"
+    app:layout_constraintBottom_toBottomOf="@id/btnPickImage"
+    app:layout_constraintStart_toEndOf="@+id/btnPickImage"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0"/>
+
+    <!-- Upload button (was 'next') -->
+    <ImageButton
+        android:id="@+id/btnUpload"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="8dp"
+    android:background="@drawable/circlebg2"
+    android:backgroundTint="@color/brick"
+    android:padding="8dp"
+    android:src="@drawable/vector_2"
+    app:layout_constraintBottom_toBottomOf="@id/btnPickImage"
+    app:layout_constraintStart_toEndOf="@id/btnPickVideo"
+    app:layout_constraintTop_toTopOf="@id/btnPickImage"
+    app:layout_constraintVertical_bias="0.0"
+    app:tint="@color/black" />
+
+    <!-- Progress (added; invisible by default) -->
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

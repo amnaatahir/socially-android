@@ -1,0 +1,75 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".camera">
+
+    <ImageView
+        android:id="@+id/storyImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_pic"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <View android:id="@+id/bottomBar" android:layout_width="0dp" android:layout_height="80dp" android:background="@color/black" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ImageButton
+        android:id="@+id/btnback"
+        android:layout_width="63dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/set"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton android:layout_width="16dp"
+        android:layout_height="44dp"
+        android:background="@null"
+        android:src="@drawable/chevron_right"
+        app:tint="@color/white"
+        tools:layout_editor_absoluteX="367dp"
+        tools:layout_editor_absoluteY="6dp"
+        tools:ignore="MissingConstraints"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TYPE"
+        android:textColor="@color/brick"
+        android:textSize="16dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIVE"
+        android:textColor="@color/brick"
+        android:textSize="16dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NORMAL"
+        android:textColor="@color/brick"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="682dp"
+        tools:ignore="MissingConstraints"/>
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOOMERANG"
+        android:textColor="@color/brick" android:textSize="16dp" tools:layout_editor_absoluteX="229dp" tools:layout_editor_absoluteY="682dp" tools:ignore="MissingConstraints"/>
+    <TextView android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="SUPERZOOM " android:textColor="@color/brick" android:textSize="16dp" tools:layout_editor_absoluteX="337dp" tools:layout_editor_absoluteY="682dp" tools:ignore="MissingConstraints"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

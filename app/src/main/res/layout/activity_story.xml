@@ -1,0 +1,128 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas"
+    xmlns:tools2="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:rotation="180"
+        android:src="@drawable/backit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <VideoView
+        android:id="@+id/storyVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/storyImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_pic"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!--  Floating Hearts  -->
+
+    <LinearLayout
+        android:id="@+id/topBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools2:layout_editor_absoluteX="-59dp"
+        tools:layout_editor_absoluteX="-52dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/storyProfilePic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <TextView
+            android:id="@+id/storyUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="User"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="11h"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btnBack11"
+            android:layout_width="43dp"
+            android:layout_height="54dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="12dp"
+            android:background="@android:color/transparent"
+            android:elevation="8dp"
+            android:src="@drawable/backit" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/heart11"
+        android:layout_width="31dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/like"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@android:color/holo_red_light" />
+    <!--  Bottom Menu  -->
+    <LinearLayout android:id="@+id/bottomBar" android:layout_width="match_parent" android:layout_height="70dp" android:orientation="horizontal" android:gravity="center" android:background="#CC000000" app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/activity" app:tint="@color/icons"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Activity" android:textColor="@android:color/white" android:textSize="12sp" android:layout_marginStart="6dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/reels" app:tint="@color/icons"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Create" android:textColor="@android:color/white" android:textSize="12sp" android:layout_marginStart="6dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/facebook" app:tint="@color/icons"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="Facebook" android:textColor="@android:color/white" android:textSize="12sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/highlight_added" app:tint="@color/icons"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Highlight" android:textColor="@android:color/white" android:textSize="12sp" android:layout_marginStart="6dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/options" app:tint="@color/icons"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More" android:textColor="@android:color/white" android:textSize="12sp" android:layout_marginStart="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
